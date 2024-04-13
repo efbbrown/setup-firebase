@@ -4127,7 +4127,7 @@ const setupProject = () => __awaiter(void 0, void 0, void 0, function* () {
     console.log("Setting up projectId ", projectId);
     console.log("Changing directory to path ", path);
     if (path && projectId) {
-        yield (0, exec_1.exec)(`cd ${path} && firebase use --add ${projectId}`);
+        yield (0, exec_1.exec)(`firebase use --add ${projectId}`, [], { cwd: path });
     }
     else if (projectId) {
         yield (0, exec_1.exec)(`firebase use --add ${projectId}`);

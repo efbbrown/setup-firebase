@@ -9,7 +9,7 @@ export const setupProject = async () => {
   console.log("Changing directory to path ", path);
 
   if (path && projectId) {
-    await exec(`cd ${path} && firebase use --add ${projectId}`);
+    await exec(`firebase use --add ${projectId}`, [], { cwd: path });
   } else if (projectId) {
     await exec(`firebase use --add ${projectId}`);
   }
