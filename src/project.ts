@@ -5,6 +5,8 @@ export const setupProject = async () => {
   startGroup("Setup Project");
   const projectId = getInput("project_id");
   const path = getInput("project_path");
+  console.log("Setting up projectId ", projectId);
+  console.log("Changing directory to path ", path);
 
   if (path && projectId) {
     await exec(`cd ${path} && firebase use --add ${projectId}`);
